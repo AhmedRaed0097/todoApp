@@ -88,7 +88,6 @@
 
 <script>
 export default {
-
   data() {
     return {
       form: {
@@ -151,8 +150,8 @@ export default {
     @media (max-width: 470px) {
       height: max-content;
     }
-    @media (max-width: 350px) {
-        margin-top: -40px;
+    @media (max-width: 395px) {
+      margin-top: -55px;
     }
   }
 }
@@ -185,7 +184,7 @@ export default {
     padding: 0 7px;
 
     @media (max-width: 650px) {
-      padding: 0 ;
+      padding: 0;
       width: 100%;
     }
   }
@@ -210,29 +209,29 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  @media(max-width:350px){
+  @media (max-width: 350px) {
     width: 90%;
   }
-  .password-field{
+  .password-field {
     padding-left: 0;
-
   }
-  .username-field{
+  .username-field {
     width: 92%;
     margin-left: 2px;
-    @media(max-width:380px){
+    @media (max-width: 380px) {
       margin-left: 0;
+    }
   }
-
-
-  }
-  small{
+  small {
     margin-left: 10px;
   }
 }
 .avalibal-user {
   margin-bottom: 10px;
   margin-top: 37px;
+  @media (max-width: 650px) {
+    margin-top: 0;
+  }
   img {
     background: #dfdfdf;
     border-radius: 50%;
@@ -273,7 +272,7 @@ export default {
   padding: 13px;
 }
 
-.show-password{
+.show-password {
   background: transparent;
 }
 </style>
