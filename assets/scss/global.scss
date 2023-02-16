@@ -1,0 +1,84 @@
+*{
+  font-family: 'Cairo', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.d-block{
+  display: inline-block;
+}
+.d-flex{
+  display: flex;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.justify-around{
+  justify-content: space-around;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+.text-bold{
+  font-weight: bold;
+}
+.pointer{
+  cursor: pointer;
+}
+.completed-todo-text{
+  text-decoration: line-through;
+  color: #6b6b6b;
+}
+
+.card-wrapper {
+  // background: #412d61;
+  border-radius: 8px;
+  height: 100%;
+  margin-top: 30px;
+  .card {
+    width: 550px;
+    height: 650px;
+    background: #fff;
+    box-shadow: 5px 5px 5px #2c2c2c;
+    border-radius: 10px;
+
+    @media (max-width: 960px) {
+      width: 75vw;
+      width: 75dvw;
+    }
+  @media (max-width: 460px) {
+    // height: 80vh;
+    }
+    h2 {
+      text-align: center;
+    }
+
+    .todos-form {
+      height: 100%;
+      .todos-list-wrapper {
+        overflow-y: auto;
+        height: 80%;
+      }
+    }
+  }
+}
+.error-message{
+  color: #f00;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px;
+}
