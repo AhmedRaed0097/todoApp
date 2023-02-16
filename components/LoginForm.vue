@@ -7,38 +7,44 @@
           <div
             class="login-fields-wrapper d-flex flex-column justify-center align-center"
           >
-            <input
-              v-model="form.username"
-              readonly
-              class="field"
-              type="text"
-              placeholder="user name"
-            />
-            <div class="field-wrapper">
+            <div class="form-inner-wrapper">
+              <small class="text-bold"> User Name </small>
               <input
-                v-model="form.password"
-                @keydown.enter="login"
-                class="field password-field"
-                :type="showPassword ? 'text' : 'password'"
-                placeholder="enter todo.."
+                v-model="form.username"
+                readonly
+                class="field username-field"
+                type="text"
+                placeholder="user name ..."
               />
-              <button
-                @click.prevent="showPassword = !showPassword"
-                class="action-btn"
-              >
-                <img
-                  v-if="!showPassword"
-                  width="30"
-                  src="~/assets/icons/show-icon.svg"
-                  alt="show icon"
+            </div>
+            <div class="form-inner-wrapper">
+              <small class="text-bold"> Password </small>
+              <div class="field-wrapper">
+                <input
+                  v-model="form.password"
+                  @keydown.enter="login"
+                  class="field password-field"
+                  :type="showPassword ? 'text' : 'password'"
+                  placeholder="password .."
                 />
-                <img
-                  v-else
-                  width="25"
-                  src="~/assets/icons/hide-icon.svg"
-                  alt="hide icon"
-                />
-              </button>
+                <button
+                  @click.prevent="showPassword = !showPassword"
+                  class="action-btn"
+                >
+                  <img
+                    v-if="!showPassword"
+                    width="30"
+                    src="~/assets/icons/show-icon.svg"
+                    alt="show icon"
+                  />
+                  <img
+                    v-else
+                    width="25"
+                    src="~/assets/icons/hide-icon.svg"
+                    alt="hide icon"
+                  />
+                </button>
+              </div>
             </div>
           </div>
           <small v-if="!isValid" class="error-message">{{
@@ -82,6 +88,9 @@
 
 <script>
 export default {
+  async fetch(){
+    await this.$store.dispatch('auth/fetchUsers')
+  },
   data() {
     return {
       form: {
@@ -143,7 +152,7 @@ export default {
     }
     @media (max-width: 370px) {
       height: max-content;
-      margin-top: -40px ;
+      margin-top: -40px;
     }
   }
 }
@@ -157,7 +166,7 @@ export default {
     border-radius: 8px;
     // padding: 0 10px;
   }
-  .password-field{
+  .password-field {
     border: none;
   }
 }
@@ -177,7 +186,6 @@ export default {
     @media (max-width: 650px) {
       width: 100%;
     }
-
   }
   .users-list-wrapper {
     padding: 20px;
@@ -194,7 +202,25 @@ export default {
     }
   }
 }
+.form-inner-wrapper {
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  .password-field{
+    padding-left: 0;
 
+  }
+  .username-field{
+    width: 90%;
+    margin-left: 7px;
+
+  }
+  small{
+    margin-left: 10px;
+  }
+}
 .avalibal-user {
   margin-bottom: 10px;
   margin-top: 37px;
@@ -219,7 +245,6 @@ export default {
 .avatar-wrapper {
   @media (max-width: 650px) {
     flex-direction: row;
-
   }
 }
 .select-btn {
