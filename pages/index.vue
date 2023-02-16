@@ -31,7 +31,6 @@ export default {
 <style lang="scss">
 html {
   background: #906cc9;
-
 }
 main {
   width: 70vw;
@@ -49,14 +48,17 @@ main {
     padding-bottom: 30px;
   }
 
+  @media (max-width: 470px) {
+    height: max-content;
+  }
+
   .todo-list-section {
     flex: 2;
     // z-index: -1;
   }
 }
-.filed{
+.filed {
   background: #412d61;
   border: 3px solid #fff;
-
 }
 </style>

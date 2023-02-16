@@ -56,7 +56,9 @@
 
 <script>
 export default {
-
+  async fetch(){
+    await this.$store.dispatch('todos/fetch')
+  },
   computed: {
     todosList() {
       return this.$store.state.todos.todos;

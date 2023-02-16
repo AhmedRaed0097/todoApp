@@ -29,7 +29,7 @@
                 />
                 <button
                   @click.prevent="showPassword = !showPassword"
-                  class="action-btn"
+                  class="action-btn show-password"
                 >
                   <img
                     v-if="!showPassword"
@@ -88,9 +88,7 @@
 
 <script>
 export default {
-  async fetch(){
-    await this.$store.dispatch('auth/fetchUsers')
-  },
+
   data() {
     return {
       form: {
@@ -187,6 +185,7 @@ export default {
     padding: 0 7px;
 
     @media (max-width: 650px) {
+      padding: 0 ;
       width: 100%;
     }
   }
@@ -206,18 +205,25 @@ export default {
   }
 }
 .form-inner-wrapper {
-  width: 100%;
+  width: 90%;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  @media(max-width:350px){
+    width: 90%;
+  }
   .password-field{
     padding-left: 0;
 
   }
   .username-field{
-    width: 90%;
-    margin-left: 7px;
+    width: 92%;
+    margin-left: 2px;
+    @media(max-width:380px){
+      margin-left: 0;
+  }
+
 
   }
   small{
@@ -265,5 +271,9 @@ export default {
   border-radius: 4px;
   margin: 30px;
   padding: 13px;
+}
+
+.show-password{
+  background: transparent;
 }
 </style>

@@ -53,7 +53,7 @@ export default {
 </script>
 <style lang="scss">
 .field-wrapper {
-  width: 90%;
+  width: 92%;
   margin: 0 auto;
   background: #fff;
   display: flex;
