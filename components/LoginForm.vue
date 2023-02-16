@@ -150,9 +150,11 @@ export default {
     @media (max-width: 650px) {
       width: 91vw;
     }
-    @media (max-width: 370px) {
+    @media (max-width: 470px) {
       height: max-content;
-      margin-top: -40px;
+    }
+    @media (max-width: 350px) {
+        margin-top: -40px;
     }
   }
 }
@@ -182,6 +184,7 @@ export default {
 
   .login-form {
     width: 50%;
+    padding: 0 7px;
 
     @media (max-width: 650px) {
       width: 100%;
@@ -260,7 +263,7 @@ export default {
 
 .login-btn {
   border-radius: 4px;
-  margin: 30px 45px 0 45px;
+  margin: 30px;
   padding: 13px;
 }
 </style>
